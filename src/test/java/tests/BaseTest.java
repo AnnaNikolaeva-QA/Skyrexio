@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.BotPage;
 import pages.TerminalPage;
 import pages.LoginPage;
 import pages.MainPage;
@@ -14,6 +15,7 @@ public class BaseTest {
     LoginPage loginPage = new LoginPage();
     MainPage mainPage = new MainPage();
     TerminalPage terminalPage = new TerminalPage();
+    BotPage botPage = new BotPage();
 
     @BeforeMethod
     public void setUp() {
