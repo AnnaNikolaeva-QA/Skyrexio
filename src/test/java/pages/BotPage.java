@@ -14,7 +14,6 @@ public class BotPage {
     protected final static SelenideElement CONFIRM_BTN = $x("//*[contains(text(), 'Confirm')]");
     protected final static SelenideElement BOT_NAME = $x("//*[@class = 'tw-text-[24px] tw-text-[#3A3A3C] tw-font-normal tw-max-w-[245px] tw-truncate']");
 
-
     public BotPage addBots() {
         BOTS.hover();
         ADD_BOT_BTN.click();
