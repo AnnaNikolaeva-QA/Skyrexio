@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -14,24 +15,27 @@ public class BotPage {
     protected final static SelenideElement CONFIRM_BTN = $x("//*[contains(text(), 'Confirm')]");
     protected final static SelenideElement BOT_NAME = $x("//*[@class = 'tw-text-[24px] tw-text-[#3A3A3C] tw-font-normal tw-max-w-[245px] tw-truncate']");
 
+    @Step("Добавление бота")
     public BotPage addBots() {
         BOTS.hover();
         ADD_BOT_BTN.click();
         return this;
     }
 
+    @Step("Выбор алерт-бота")
     public BotPage chooseAlertBot() {
         ALERT_BOT_BTN.click();
         return this;
     }
 
+    @Step("Создание бота")
     public BotPage createBot(String botName) {
         CREATE_BOT_BTN.click();
         BOT_NAME_INPUT.setValue(botName);
         CONFIRM_BTN.click();
         return this;
     }
-
+    @Step("Проверка создания бота")
     public void checkCreatedBot(String botName) {
         BOT_NAME.shouldHave(text(botName));
     }
